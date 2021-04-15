@@ -4,7 +4,7 @@ export class Api{
   }
 
   postForm(data) {    
-    return fetch(`${this._baseUrl}/processError.php`, {
+    return fetch(`${this._baseUrl}/post_error.php`, {
       method: 'POST',  
       body: data,  
     }).then(res => {

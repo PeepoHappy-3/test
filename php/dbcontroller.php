@@ -3,10 +3,10 @@
     try{
       $dbconnection = new PDO("mysql:host=$dbservername;dbname=$dbname", $dbusername, $dbpassword);
       $dbconnection->exec("set names utf8");
+      return $dbconnection;
     } catch(PDOEsception $e){
-      echo $e->getMessage();
-    }
-    return $dbconnection;
+      echo json_encode(array('message' => $e->getMessage()));
+    }   
   }
 
   function load_file($uploaddir){
@@ -33,13 +33,11 @@
     $data = array('id'=>$id, 'name'=> $name, 'email'=> $email,'phone'=>$phone,'message'=> $message,'image'=>$image_path,'status'=> false);
     $sql_query = $dbconnection->prepare('INSERT INTO '. $dbtable .'(id, name,email,phone, message, image, status) values (:id, :name, :email, :phone, :message, :image, :status)');
     try{
-      if(!$sql_query->execute($data)){
-        http_response_code(500);
-        throw new Exception('Запрос не отправлен'); 
-      }   
+      $sql_query->execute($data);
       echo json_encode(array('message' => 'Запрос отправлен'));
     } catch(PDOException $e){
-      echo array('message' => $e.getMessage());
+      http_response_code(500);    
+      echo json_encode(array('message' => $e.getMessage()));
     }    
   }
 ?> 
