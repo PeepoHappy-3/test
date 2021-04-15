@@ -54,8 +54,5 @@
   catch(Esception $e){
     http_response_code(500);
     echo json_encode(array('message' => $e->getMessage()));      
-  }
-  /*
-  CREATE TABLE `test`.`error_reports` ( `id` VARCHAR(24) NOT NULL , `name` VARCHAR(30) NOT NULL , `email` VARCHAR(50) NOT NULL , `phone` VARCHAR(15) NOT NULL , `message` TEXT NOT NULL , `image` VARCHAR(50) NOT NULL , `status` BOOLEAN NOT NULL ) ENGINE = InnoDB;
-  */                                                                
+  }                                                          
 ?>

@@ -5,10 +5,7 @@ export class Api{
 
   postForm(data) {    
     return fetch(`${this._baseUrl}/processError.php`, {
-      method: 'POST',
-      /*headers: {
-        'Content-Type':'multipart/form-data'
-      },*/
+      method: 'POST',  
       body: data,  
     }).then(res => {
       if (res.ok) {
