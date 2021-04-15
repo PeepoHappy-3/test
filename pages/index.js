@@ -18,7 +18,8 @@ const popupConf = {
   popup: document.querySelector('.popup'),
   openClass: 'popup_visible',
   button: '.popup__button',
-  closeButton: '.popup__close-button'
+  closeButton: '.popup__close-button',
+  header: '.popup__header',
 }
 
 const api = new Api(apiConf);
@@ -26,11 +27,13 @@ const form = new Form(conf, submitForm);
 const popup = new Popup(popupConf);
 
 function submitForm(data) {
-  api.postForm(data).then(res => {    
-    popup.open();
+  api.postForm(data).then(res => {
+    popup.setMessage('Запрос успешно отправлен');
+     popup.open();
   })
     .catch(err => {
-    console.log(err);
+      popup.setMessage('Ошибка. Запрос не отправлен');
+      popup.open();
   }).finally(()=>{  
     form.resetValidation();
     form.clearForm();

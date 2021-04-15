@@ -4,6 +4,7 @@ export class Popup{
     this._openClass = conf.openClass;
     this._closeButton = conf.closeButton;
     this._button = conf.button;
+    this._header = conf.header;
     this._handleOverlayClose = this._handleOverlayClose.bind(this);
     this._handleEscClose = this._handleEscClose.bind(this);
   }
@@ -35,5 +36,10 @@ export class Popup{
     button.addEventListener('click', () => {
       this.close();
     });
+  }
+
+  setMessage(message) {
+    const header = this._popup.querySelector(this._header);
+    header.textContent = message;
   }
 }
