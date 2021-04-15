@@ -1,5 +1,4 @@
-<?php 
-  $input = file_get_contents('php://input');
+<?php  
   $dbservername = "localhost";
   $dbname = "test";
   $dbusername = "admin";

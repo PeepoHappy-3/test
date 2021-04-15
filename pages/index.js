@@ -26,8 +26,7 @@ const form = new Form(conf, submitForm);
 const popup = new Popup(popupConf);
 
 function submitForm(data) {
-  api.postForm(data).then(res => {
-    console.log(res);
+  api.postForm(data).then(res => {    
     popup.open();
   })
     .catch(err => {
