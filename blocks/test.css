@@ -1,0 +1,126 @@
+.test {
+    position: relative;
+    display: flex;
+    background-color: #000000;
+    min-height: 100vh;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    z-index: 1;
+}
+
+.test__header {
+    font-size: 24px;
+    line-height: 1.22;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.test__container {
+    max-width: 1100px;
+    position: relative;
+}
+
+.test__form-container {
+    padding: 30px 30px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+}
+
+.test__form {
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 430px;
+}
+
+.test__input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #808080;
+}
+
+.test__input_textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #808080;
+    resize: none;
+}
+
+.test__submit {
+    margin: 30px 0 0;
+    width: 100%;
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    padding: 10px 5px;
+}
+
+.test__submit:hover {
+    opacity: .8;
+}
+
+.test__submit:disabled {
+    opacity: .2;
+}
+
+.test__input-file {
+    color: transparent;
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.test__input-file::before {
+    content: 'Выберете файлы для отправки';
+    display: inline-block;
+    cursor: pointer;
+    margin: 20px 0 0;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.test__input-file:hover::before {
+    opacity: .8;
+}
+
+.test__input-error {
+    border-color: #ff0000;
+}
+
+.test__text-error {
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+    opacity: 0;
+    color: #ff0000;
+    align-self: flex-start;
+}
+
+.test__text-error_visible {
+    visibility: visible;
+    opacity: 1;
+}
