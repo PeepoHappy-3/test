@@ -14,7 +14,4 @@ export class Api{
       return Promise.reject(new Error(`Ошибка ${res.status}`));
     })
   }
-  uploadImage() {
-    
-  }
 }
