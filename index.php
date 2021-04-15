@@ -20,7 +20,7 @@
             <span class="test__text-error" id="phone-error"></span>
             <textarea  class="test__input test__input_textarea" placeholder = "Информация об ошибке" rows=5 name ="message" id = "message" required></textarea>  
             <span class="test__text-error" id="message-error"></span>
-            <input type="file" class="test__input-file " name = "file" id ="file">   
+            <input type="file" class="test__input-file " name = "file" id ="file" accept ="image/*">   
             <span class="test__text-error" id="file-error"></span>     
             <button type="submit" class="test__submit" disabled>Отправить</button>
           </form>
