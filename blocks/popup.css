@@ -89,3 +89,10 @@
     bottom: 17%;
     transform: rotate(-45deg);
 }
+
+@media screen and (max-width:410px) {
+    .popup__close-button {
+        top: -20px;
+        right: 0;
+    }
+}
