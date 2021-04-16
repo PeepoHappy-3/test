@@ -6,15 +6,15 @@
   $dbusername = "admin";
   $dbpassword = "1234";
   $dbtable = "error_reports";  
-  $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/uploads/';
-  $response = '';
+  $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/uploads/';  
   $image_path = ''; 
-
+  
   $name = htmlspecialchars($_POST['name']);
   $email = htmlspecialchars($_POST['email']);
   $phone = htmlspecialchars($_POST['phone']);
   $message = htmlspecialchars($_POST['message']);  
   $id = uniqid(rand(0, 999), true);
+
   $image_path = load_file($uploaddir);
   $data = array('id'=>$id, 'name'=> $name, 'email'=> $email,'phone'=>$phone,'message'=> $message,'image'=>$image_path,'status'=> false);
   $mask = '(id, name,email,phone, message, image, status) values (:id, :name, :email, :phone, :message, :image, :status)';
