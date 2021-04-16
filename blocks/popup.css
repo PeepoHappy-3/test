@@ -33,7 +33,7 @@
 }
 
 .popup__header {
-    margin: 0;
+    margin: 20px 0 0;
     padding: 0;
     color: #000000;
 }
@@ -44,6 +44,7 @@
     border-radius: 5px;
     cursor: pointer;
     padding: 5px 20px;
+    margin: 0 0 20px;
 }
 
 .popup__button:hover {

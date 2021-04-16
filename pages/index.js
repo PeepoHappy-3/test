@@ -20,6 +20,7 @@ const popupConf = {
   button: '.popup__button',
   closeButton: '.popup__close-button',
   header: '.popup__header',
+  icon:'.popup__image',
 }
 
 const api = new Api(apiConf);
@@ -28,11 +29,11 @@ const popup = new Popup(popupConf);
 
 function submitForm(data) {
   api.postForm(data).then(res => {
-    popup.setMessage('Запрос успешно отправлен');
+    popup.setContent('Запрос успешно отправлен', './images/succes.svg');
      popup.open();
   })
     .catch(err => {
-      popup.setMessage('Ошибка. Запрос не отправлен');
+      popup.setContent('Ошибка. Запрос не отправлен', './images/denied.svg');
       popup.open();
   }).finally(()=>{  
     form.resetValidation();

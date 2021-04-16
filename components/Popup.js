@@ -5,6 +5,7 @@ export class Popup{
     this._closeButton = conf.closeButton;
     this._button = conf.button;
     this._header = conf.header;
+    this._icon = conf.icon;
     this._handleOverlayClose = this._handleOverlayClose.bind(this);
     this._handleEscClose = this._handleEscClose.bind(this);
   }
@@ -38,8 +39,17 @@ export class Popup{
     });
   }
 
-  setMessage(message) {
+  _setMessage(message) {
     const header = this._popup.querySelector(this._header);
     header.textContent = message;
+  }
+
+  _setIcon(src) {
+    const icon = this._popup.querySelector(this._icon);
+    icon.src = src;
+  }
+  setContent(message, icon) {
+    this._setMessage(message);
+    this._setIcon(icon);   
   }
 }

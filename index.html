@@ -1,45 +1,49 @@
 <!DOCTYPE html>
-<html lang ="ru">
-  <head>
+<html lang="ru">
+
+<head>
     <title>Тестовоe задание</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.php"> 
-  </head>
-  <body>   
+    <link rel="stylesheet" href="./pages/index.php">
+</head>
+
+<body>
     <div class="test">
-      <div class="test__container">
-        <div class="test__form-container">
-          <form action="#" class="test__form" name = "testForm" novalidate>
-             <h1 class="test__header">Сообщите нам об ошибке</h1>
-            <input type="text" class="test__input" placeholder = "ФИО" name = "name" id="name" required minlength = 2 maxlength = 30> 
-            <span class="test__text-error" id = "name-error"></span>
-            <input type="email" class="test__input" placeholder = "Email" name = "email" id="email" required>
-            <span class="test__text-error" id="email-error"></span>
-            <input type="tel" class="test__input" placeholder = "Телефон" name = "phone" id="phone">
-            <span class="test__text-error" id="phone-error"></span>
-            <textarea  class="test__input test__input_textarea" placeholder = "Информация об ошибке" rows=5 name ="message" id = "message" required></textarea>  
-            <span class="test__text-error" id="message-error"></span>
-            <input type="file" class="test__input-file " name = "file" id ="file" accept ="image/*">   
-            <span class="test__text-error" id="file-error"></span>     
-            <button type="submit" class="test__submit" disabled>Отправить</button>
-          </form>
-        </div>      
-      </div>
+        <div class="test__container">
+            <div class="test__form-container">
+                <form action="#" class="test__form" name="testForm" novalidate>
+                    <h1 class="test__header">Сообщите нам об ошибке</h1>
+                    <input type="text" class="test__input" placeholder="ФИО" name="name" id="name" required minlength=2 maxlength=3 0>
+                    <span class="test__text-error" id="name-error"></span>
+                    <input type="email" class="test__input" placeholder="Email" name="email" id="email" required>
+                    <span class="test__text-error" id="email-error"></span>
+                    <input type="tel" class="test__input" placeholder="Телефон" name="phone" id="phone">
+                    <span class="test__text-error" id="phone-error"></span>
+                    <textarea class="test__input test__input_textarea" placeholder="Информация об ошибке" rows=5 name="message" id="message" required></textarea>
+                    <span class="test__text-error" id="message-error"></span>
+                    <input type="file" class="test__input-file " name="file" id="file" accept="image/*">
+                    <span class="test__text-error" id="file-error"></span>
+                    <button type="submit" class="test__submit" disabled>Отправить</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="popup">      
-      <div class="popup__container">
-      <div class="popup__close-button"></div>
-        <h2 class="popup__header">
-            Запрос успешно отправлен
-        </h2>
-        <button class="popup__button">
+    <div class="popup popup_visible">
+        <div class="popup__container">
+            <div class="popup__close-button"></div>
+            <h2 class="popup__header">
+                Запрос успешно отправлен
+            </h2>
+            <img src="./images/succes.svg" alt="Неудача." class="popup__image">
+            <button class="popup__button">
           OK!
         </button>
-      </div>
+        </div>
     </div>
     <script type="module" src="./pages/index.js"></script>
     <script type="module" src="./components/Form.js"></script>
     <script type="module" src="./components/Api.js"></script>
-  </body>
+</body>
+
 </html>
