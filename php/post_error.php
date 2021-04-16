@@ -15,7 +15,7 @@
   $phone = htmlspecialchars($_POST['phone']);
   $message = htmlspecialchars($_POST['message']);  
   $id = uniqid(rand(0, 999), true);
-
+  $image_path = load_file($uploaddir);
   $data = array('id'=>$id, 'name'=> $name, 'email'=> $email,'phone'=>$phone,'message'=> $message,'image'=>$image_path,'status'=> false);
   $mask = '(id, name,email,phone, message, image, status) values (:id, :name, :email, :phone, :message, :image, :status)';
 
@@ -27,7 +27,7 @@
   }
   set_exception_handler('exception_handler');  
   try{
-    post_error(dbconnect($dbservername,  $dbname, $dbusername, $dbpassword), $sql_expression, load_file($uploaddir));
+    post_error(dbconnect($dbservername,  $dbname, $dbusername, $dbpassword), $sql_expression);
   }
   catch(Exception $e){
    

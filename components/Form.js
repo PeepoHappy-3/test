@@ -61,8 +61,7 @@ export class Form {
   setSubmit(handler) {
     const form = document.querySelector(this._formSelector);
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
+      e.preventDefault();      
         handler(this._getInputVaules());
     });
   }

@@ -15,15 +15,14 @@
       $file_name = $_FILES['file']['name'];
       $tmp_name = $_FILES['file']['tmp_name'];  
       $image_path = $uploaddir.basename($file_name);
-      if(!move_uploaded_file($tmp_name,  $image_path)){
-        http_response_code(500);
+      if(!move_uploaded_file($tmp_name,  $image_path)){     
         throw new Exception( 'Файл не загружен. ');        
       }
     }  
     return $image_path;
   }
 
-  function post_error($dbconnection, $data, $image_path){     
+  function post_error($dbconnection, $data){     
     $sql_query = $dbconnection->prepare('INSERT INTO '. $data['dbtable'] .$data['mask']);
     try{
       $sql_query->execute($data['data']);
