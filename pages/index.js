@@ -29,7 +29,7 @@ const popup = new Popup(popupConf);
 
 function submitForm(data) {
   api.postForm(data).then(res => {
-    popup.setContent('Запрос успешно отправлен', './images/succes.svg');
+     popup.setContent('Запрос успешно отправлен', './images/succes.svg');
      popup.open();
   })
     .catch(err => {
