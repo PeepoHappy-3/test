@@ -18,6 +18,7 @@
     line-height: 1.22;
     padding: 0;
     margin: 0 0 20px;
+    font-weight: 800;
 }
 
 .test__container {
@@ -141,10 +142,10 @@
         font-size: 20px;
         line-height: 1.1;
         padding: 0;
-        margin: 0 0 10px;
+        margin: 10px 0 10px;
     }
     .test__input {
-        padding: 5px 1px;
+        font-size: 14px;
     }
     .test__form {
         width: 100%;
