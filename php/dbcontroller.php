@@ -23,8 +23,8 @@
     return $image_path;
   }
 
-  function post_error($dbconnection, $dbtable, $data, $image_path){     
-    $sql_query = $dbconnection->prepare('INSERT INTO '. $dbtable .$data['mask']);
+  function post_error($dbconnection, $data, $image_path){     
+    $sql_query = $dbconnection->prepare('INSERT INTO '. $data['dbtable'] .$data['mask']);
     try{
       $sql_query->execute($data['data']);
       echo json_encode(array('message' => 'Запрос отправлен'));
