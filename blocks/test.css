@@ -132,6 +132,12 @@
     .test__container {
         max-width: 400px;
     }
+}
+
+@media screen and (max-width:410px) {
+    .test__container {
+        max-width: 320px;
+    }
     .test__input {
         padding: 5px;
     }
@@ -163,15 +169,8 @@
     }
 }
 
-@media screen and (max-width:410px) {
-    .test__container {
-        max-width: 320px;
-    }
-}
-
 @media screen and (max-width:320px) {
     .test__container {
         max-width: 300px;
     }
-    .test__input-file::before {}
 }

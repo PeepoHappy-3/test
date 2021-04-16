@@ -23,17 +23,10 @@
     return $image_path;
   }
 
-  function post_error($dbconnection, $dbtable, $image_path){  
-    $id = uniqid(rand(0, 999), true); 
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $message = htmlspecialchars($_POST['message']);     
-    $status = false;  
-    $data = array('id'=>$id, 'name'=> $name, 'email'=> $email,'phone'=>$phone,'message'=> $message,'image'=>$image_path,'status'=> false);
-    $sql_query = $dbconnection->prepare('INSERT INTO '. $dbtable .'(id, name,email,phone, message, image, status) values (:id, :name, :email, :phone, :message, :image, :status)');
+  function post_error($dbconnection, $dbtable, $data, $image_path){     
+    $sql_query = $dbconnection->prepare('INSERT INTO '. $dbtable .$data['mask']);
     try{
-      $sql_query->execute($data);
+      $sql_query->execute($data['data']);
       echo json_encode(array('message' => 'Запрос отправлен'));
     } catch(PDOException $e){
       http_response_code(500);    
