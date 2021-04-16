@@ -10,7 +10,7 @@
     <div class="test">
       <div class="test__container">
         <div class="test__form-container">
-          <form action="php/sendError.php" class="test__form" name = "testForm" novalidate>
+          <form action="#" class="test__form" name = "testForm" novalidate>
              <h1 class="test__header">Сообщите нам об ошибке</h1>
             <input type="text" class="test__input" placeholder = "ФИО" name = "name" id="name" required minlength = 2 maxlength = 30> 
             <span class="test__text-error" id = "name-error"></span>
