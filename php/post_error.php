@@ -1,22 +1,19 @@
 <?php  
   require_once 'dbcontroller.php';
+  require_once 'post_request_process.php';
 
   $dbservername = "localhost";
   $dbname = "test";
   $dbusername = "admin";
   $dbpassword = "1234";
   $dbtable = "error_reports";  
-  $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/uploads/';    
-  
-  $name = htmlspecialchars($_POST['name']);
-  $email = htmlspecialchars($_POST['email']);
-  $phone = htmlspecialchars($_POST['phone']);
-  $message = htmlspecialchars($_POST['message']);  
-  $id = uniqid(rand(0, 999), true);
+  $uploaddir = $_SERVER['DOCUMENT_ROOT'].'/uploads/';  
+
+
   $image_path = load_file($uploaddir);
   
-  $data = array('id'=>$id, 'name'=> $name, 'email'=> $email,'phone'=>$phone,'message'=> $message,'image'=>$image_path,'status'=> false);
-  $mask = '(id, name,email,phone, message, image, status) values (:id, :name, :email, :phone, :message, :image, :status)';
+  $data = set_data($_POST, $image_path);
+  $mask = set_mask($data);
 
   $sql_expression = array('data' => $data, 'mask' => $mask, 'dbtable' => $dbtable );
 
