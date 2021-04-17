@@ -5,7 +5,7 @@
       $id = uniqid(rand(0, 999), true);
       $data+=['id'=>$id];
       foreach($post as $key => $value){     
-        $data+= [$key=>$value];
+        $data+= [$key=>htmlspecialchars($value)];
       }
       if($_FILES['file']['error'] == 0){
         $data+= ['image' => $file_path];
